@@ -1,0 +1,233 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>b1ywww on b1ywww</title>
+    <link>https://example.com/</link>
+    <description>Recent content in b1ywww on b1ywww</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>Chinese</language>
+    <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About Hugo</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>&lt;p&gt;$$
+3.问a，b取什么值时，线性方程组
+\begin{cases}
+x_{1} + 2x_{2} + 2x_{3} = 2 \\&lt;br&gt;
+x_{1} + 3x_{2} + x_{3} = 3 \\&lt;br&gt;
+x_{1} + x_{2} + ax_{3} = b
+\end{cases}
+有唯一解;无解;有无穷多个解？在有无穷多个解时，求它的通解.
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+解:&amp;amp;线性方程组的系数矩阵D=
+\begin{bmatrix}
+1&amp;amp;2&amp;amp;2\\&lt;br&gt;
+1&amp;amp;3&amp;amp;1\\&lt;br&gt;
+1&amp;amp;1&amp;amp;a
+\end{bmatrix}
+当
+\begin{vmatrix}
+D
+\end{vmatrix}
+=0时方程组无解或有无穷多个解。\\&lt;br&gt;
+&amp;amp;即:a=3\\ \\&lt;br&gt;
+&amp;amp;D_{x_{1}}=
+\begin{bmatrix}
+2&amp;amp;2&amp;amp;2\\&lt;br&gt;
+3&amp;amp;3&amp;amp;1\\&lt;br&gt;
+b&amp;amp;1&amp;amp;a
+\end{bmatrix},
+D_{x_{2}}=
+\begin{bmatrix}
+1&amp;amp;2&amp;amp;2\\&lt;br&gt;
+1&amp;amp;3&amp;amp;1\\&lt;br&gt;
+1&amp;amp;b&amp;amp;a
+\end{bmatrix},
+D_{x_{3}}=
+\begin{bmatrix}
+1&amp;amp;2&amp;amp;2\\&lt;br&gt;
+1&amp;amp;3&amp;amp;3\\&lt;br&gt;
+1&amp;amp;1&amp;amp;b
+\end{bmatrix}\\ \\&lt;br&gt;
+&amp;amp;当\begin{vmatrix}D_{x_{1}}\end{vmatrix}=
+\begin{vmatrix}D_{x_{2}}\end{vmatrix}=
+\begin{vmatrix}D_{x_{3}}\end{vmatrix}=0
+时,线性方程组有无穷多个解\\ \\&lt;br&gt;
+&amp;amp;即 b = 1; \\ \\&lt;br&gt;
+&amp;amp;将a = 3,b = 1 代入，可得其增广矩阵为
+\left[
+\begin{array}{ccc|c}
+1&amp;amp;2&amp;amp;2&amp;amp;2\\&lt;br&gt;
+1&amp;amp;3&amp;amp;1&amp;amp;3\\&lt;br&gt;
+1&amp;amp;1&amp;amp;3&amp;amp;1
+\end{array}
+\right]
+\\ \\&lt;br&gt;
+&amp;amp;化为行最简式为
+\left[
+\begin{array}{ccc|c}
+1&amp;amp;2&amp;amp;2&amp;amp;2\\&lt;br&gt;
+0&amp;amp;1&amp;amp;-1&amp;amp;1\\&lt;br&gt;
+0&amp;amp;0&amp;amp;0&amp;amp;0
+\end{array}
+\right]\\ \\&lt;br&gt;
+&amp;amp;令x_{3} = t;\\ \\&lt;br&gt;
+&amp;amp;则x_{1} = -4t,x_{2} = t+1\\ \\&lt;br&gt;
+&amp;amp;当\begin{vmatrix}D_{x_{1}}\end{vmatrix}=
+\begin{vmatrix}D_{x_{2}}\end{vmatrix}=
+\begin{vmatrix}D_{x_{3}}\end{vmatrix}\not=0 \\ \\&lt;br&gt;
+&amp;amp;即a=3,b\not= 1 时，方程组无解
+当a\not= 3时 有唯一解
+\end{align}
+\\ \\ \\ \\ \\ \\&lt;br&gt;
+$$&lt;/p&gt;
+&lt;p&gt;$$
+5.求非齐次线性方程组
+\begin{cases}
+2x_{1}+x_{2}-x_{3}+x_{4} = 1\\&lt;br&gt;
+4x_{1}+2x_{2}-2x_{3}+x_{4} = 2\\&lt;br&gt;
+2x_{1}+x_{2}-x_{3}-x_{4} = 1
+\end{cases}
+的通解及其导出组的一个基础解系。\\&lt;br&gt;
+\begin{align}
+&amp;amp;线性方程组增广矩阵A=
+\left[
+\begin{array}{cccc|c}
+2&amp;amp;1&amp;amp;-1&amp;amp;1&amp;amp;1\\&lt;br&gt;
+4&amp;amp;2&amp;amp;-2&amp;amp;1&amp;amp;2\\&lt;br&gt;
+2&amp;amp;1&amp;amp;-1&amp;amp;-1&amp;amp;1
+\end{array}
+\right]\\ \\&lt;br&gt;
+&amp;amp;化为行最简式后A=
+\left[
+\begin{array}{cccc|c}
+2&amp;amp;1&amp;amp;-1&amp;amp;1&amp;amp;1\\&lt;br&gt;
+0&amp;amp;0&amp;amp;0&amp;amp;1&amp;amp;0\\&lt;br&gt;
+0&amp;amp;0&amp;amp;0&amp;amp;0&amp;amp;0
+\end{array}
+\right]\\&lt;br&gt;
+&amp;amp;令x_{2} = t_{1},x_{3}=t_{2}\\ \\&lt;br&gt;
+&amp;amp;则
+\begin{cases}
+x_{1} = t_{2} - t_{1} + 1\\&lt;br&gt;
+x_{2} = t_{1}\\&lt;br&gt;
+x_{3} = t_{2}\\
+x_{4} = 0
+\end{cases}\\ \\&lt;br&gt;
+&amp;amp;基础解系为
+\begin{bmatrix}
+x_{1}\\&lt;br&gt;
+x_{2}\\&lt;br&gt;
+x_{3}\\&lt;br&gt;
+x_{4}
+\end{bmatrix}=
+\begin{bmatrix}
+-1\\&lt;br&gt;
+1\\&lt;br&gt;
+0\\&lt;br&gt;
+0
+\end{bmatrix}t_{1}+
+\begin{bmatrix}
+1\\&lt;br&gt;
+0\\&lt;br&gt;
+1\\&lt;br&gt;
+0
+\end{bmatrix}t_{2}+
+\begin{bmatrix}
+1\\&lt;br&gt;
+0\\&lt;br&gt;
+0\\&lt;br&gt;
+0
+\end{bmatrix}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+6.设四元非齐次&amp;amp;方程组的系数矩阵的秩为3，已知\eta_{1},\eta_{2},\eta_{3}是它的三个特解，且\\ \\&lt;br&gt;
+&amp;amp;\eta_{1}=\begin{bmatrix}2\\3\\4\\5\end{bmatrix},\eta_{2}+\eta_{3}=\begin{bmatrix}1\\2\\3\\4\end{bmatrix}求该方程组的通解。
+\end{align}
+$$
+$$
+\begin{align}
+解:&amp;amp;设方程组为Ax=B。导出组Ax=0的未知元个数n=4，因为n-R(A)=1,所以，\xi 为Ax=0的解，\\&lt;br&gt;
+&amp;amp;且R(\xi) = 1，则\xi是Ax=0的一个基础解系。\\&lt;br&gt;
+&amp;amp;设\eta_{4} = \frac{\eta_{2}+\eta_{3}}{2} =\begin{bmatrix}0.5\\1\\1.5\\2\end{bmatrix}\\&lt;br&gt;
+&amp;amp;即\eta_{4}为方程组的一个特解。\\&lt;br&gt;
+&amp;amp;\xi = \eta_{4} - \eta_{1} = \begin{bmatrix}1.5\\2\\2.5\\3 \end{bmatrix}\\&lt;br&gt;
+&amp;amp;所以方程组的通解为x = k\xi + \eta_{1} = k\begin{bmatrix}1.5\\2\\2.5\\3 \end{bmatrix}+\begin{bmatrix}2\\3\\4\\5\end{bmatrix}(其中k为任意数)
+\end{align}
+$$
+$$
+2.当t为何值时，向量组a_{1}=(0,4,2-t),a_{2}=(2,3-t,1),a_{3}=(1-t,2,3)线性相关。
+$$
+$$
+\begin{align}
+解:   &amp;amp;A=(a_{1},a_{2},a_{3})=\begin{bmatrix}0&amp;amp;2&amp;amp;1-t\\4&amp;amp;3-t&amp;amp;2\\2-t&amp;amp;1&amp;amp;3\end{bmatrix}\\&lt;br&gt;
+&amp;amp;当
+\begin{vmatrix}
+A
+\end{vmatrix}=0
+时，即t=6时a_{1},a_{2},a_{3}线性相关。
+\end{align}
+$$
+$$
+3.设向量组a,b,c线性无关，证明向量组3a+2b+c，2a-3b-4c，-5a+4b-c 也线性无关
+$$
+$$
+\begin{align}
+解:&amp;amp;设向量组3a+2b+c，2a-3b-4c，-5a+4b-c线性相关\\&lt;br&gt;
+&amp;amp;即存在k_{1},k_{2},k_{3},使得k_{1}(3a+2b+c)+k_{2}(2a-3b-4c)+k_{3}(-5a+4b-c) = 0\\&lt;br&gt;
+&amp;amp;即:(3k_{1}+2k_{2}-5k_{3})a+(2k_{1}-3k_{2}+4k_{3})b+(k_{1}-4k_{2}-k_{3})c = 0\\&lt;br&gt;
+&amp;amp;即:a,b,c线性相关。与题干符合。所以向量组3a+2b+c，2a-3b-4c，-5a+4b-c线性无关
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+4.设A是n\times m 矩阵，B是m\times n矩阵，其中n\le m，若AB=I，证明B的列向量组线性无关。\\&lt;br&gt;
+$$
+$$
+\begin{align}
+解:&amp;amp;因为AB=I,所以|B|\not= 0所以B的列矩阵线性无关\\&lt;br&gt;
+&amp;amp;证明:向量组(a_{1},a_{2},\cdots,a_{n})所构成的矩阵为B\\&lt;br&gt;
+&amp;amp;|B| \not= 0时，向量组线性无关。\\&lt;br&gt;
+&amp;amp;|B| = 0 时， 向量线性相关。\\
+&amp;amp;设方程组BX=0(B为系数矩阵)\\&lt;br&gt;
+&amp;amp;当|B|=0时，BX=0 有非零解。所以向量组线性相关\\&lt;br&gt;
+&amp;amp;当|B|\not= 0 BX=0有唯一的零解。 所以向量组线性无关
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+30. &amp;amp;设A，B，C，D事件分别为第一，第二，第三，第四道工序生产出来的是正品\\&lt;br&gt;
+&amp;amp;P=1-P(A)\times P(B) \times P(C) \times P(D) = 0.1240221
+\end{align}
+$$
+$$
+\begin{align}
+31.&amp;amp;设i次射击一次不中的概率为P(X_i）\\&lt;br&gt;
+&amp;amp;P(X_i) = 1-0.8^i\\&lt;br&gt;
+&amp;amp;当P(X_i)\le 0.1时，即i&amp;gt;10\\&lt;br&gt;
+&amp;amp;所以最少要射击11次
+\end{align}
+$$
+$$
+\begin{align}
+33.P = 1 - \frac{4}{5}\times \frac{2}{3} \times \frac{3}{4} = 0.6
+\end{align}
+$$
+$$
+\begin{align}
+34.&amp;amp;设A_i 表示有几个人射中飞机， B表示飞机被击落\\&lt;br&gt;
+&amp;amp;P(B)=\sum_{i=1}^n p(A_i)p(B|A_i)=0.458
+\end{align}
+$$&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
