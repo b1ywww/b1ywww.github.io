@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基于yolo的菜品识别系统 on b1ywww</title>
+    <title>基于yolo的菜品识别系统项目 on b1ywww</title>
     <link>https://example.com/posts/projuct1/</link>
-    <description>Recent content in 基于yolo的菜品识别系统 on b1ywww</description>
+    <description>Recent content in 基于yolo的菜品识别系统项目 on b1ywww</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>Chinese</language>
     <lastBuildDate>Mon, 13 Apr 2020 11:51:50 +0800</lastBuildDate>
@@ -21,11 +21,11 @@
     </item>
     
     <item>
-      <title>Hugo News11</title>
-      <link>https://example.com/1/1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>yolo介绍</title>
+      <link>https://example.com/2020/1/</link>
+      <pubDate>Mon, 13 Apr 2020 11:51:50 +0800</pubDate>
       
-      <guid>https://example.com/1/1/</guid>
+      <guid>https://example.com/2020/1/</guid>
       <description></description>
     </item>
     
