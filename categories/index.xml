@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on b1ywww</title>
-    <link>https://example.com/categories/</link>
+    <link>https://b1ywww.github.io/categories/</link>
     <description>Recent content in Categories on b1ywww</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>Chinese</language>
     <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://b1ywww.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>作业</title>
-      <link>https://example.com/categories/%E4%BD%9C%E4%B8%9A/</link>
+      <link>https://b1ywww.github.io/categories/%E4%BD%9C%E4%B8%9A/</link>
       <pubDate>Fri, 10 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/%E4%BD%9C%E4%B8%9A/</guid>
+      <guid>https://b1ywww.github.io/categories/%E4%BD%9C%E4%B8%9A/</guid>
       <description></description>
     </item>
     
