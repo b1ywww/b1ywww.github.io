@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="/katex/katex.min.css"/>
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+  
+  
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -50,7 +52,7 @@
     "articleSection" : "posts",
     "name" : "概率论作业",
     "headline" : "概率论作业",
-    "description" : "$$ \\begin{align} 30. \x26amp;设A，B，C，D事件分别为第一，第二，第三，第四道工序生产出来的是正品\\\\\n\x26amp;P=1-P(A)\\times P(B) \\times P(C) \\times P(D) = 0.1240221 \\end{align} $$ $$ \\begin{align} 31.\x26amp;设i次射击一次不中的概率为P(X_i）\\\\\n\x26amp;P(X_i) = 1-0.8^i\\\\\n\x26amp;当P(X_i)\\le 0.1时，即i\x26gt;10\\\\\n\x26amp;所以最少要射击11次\\\\\n\\end{align} \\\\\n$$ $$ \\begin{align} 33.P = 1 - \\frac{4}{5}\\times \\frac{2}{3} \\times \\frac{3}{4} = 0.6\\\\\n\\end{align} \\\\\n$$ $$ \\begin{align} 34.\x26amp;设A_i 表示有几个人射中飞机， B表示飞机被击落\\\\\n\x26amp;P(B)=\\sum_{i=1}^n p(A_i)p(B|A_i)=0.458\\\\\n\\end{align} \\\\\n$$",
+    "description" : "16. $$ \\begin{align} (1)\x26amp;P(X\\le 150 ) = \\int_{100}^{150}\\frac{100}{x^2}dx=\\frac{1}{3}\\\\\n\x26amp;p=(P(X \x26gt;150)^3 = \\frac{8}{27}\\\\\n(2)\x26amp;p=C_3^1\\frac{1}{3}(\\frac{2}{3})^2=\\frac{4}{9}\\\\\n(3)\x26amp;当x\\ge 100时F(x)=\\int_{-\\infty}^xf(s)ds=1-\\frac{100}{x}\\\\\n\x26amp;所以F(X)=\\begin{cases} 1-\\frac{100}{x}, x \\ge 100\\\\\n0,x\x26lt;100 \\end{cases} \\end{align} $$\n17. $$ \\begin{align} \x26amp;设F(x) = kx,(0\\le x \\ge a)\\\\\n\x26amp;因为F(a)-F(0)=1\\\\\n\x26amp;所以k=\\frac{1}{a}\\\\\n\x26amp;F(x)=\\begin{cases} 0, x \x26lt; 0\\\\\n\\frac{x}{a}, 0\\ge x \\le a\\\\\n1,x\x26gt;a \\end{cases} \\end{align} $$\n18. $$ \\begin{align} \x26amp;由均匀分布可得密度函数为f(x)=\\begin{cases} \\frac{1}{3}, 2\\le x \\le 5\\\\ 0, x\x26lt;2或x\x26gt;5\\end{cases}\\\\\n\x26amp;P(X\x26gt;3)=\\int_3^5\\frac{1}{3}dx=\\frac{2}{3}\\\\\n\x26amp;p=C_3^2(\\frac{2}{3})^2\\frac{1}{3}\x2b(\\frac{2}{3})^2 = \\frac{20}{27} \\end{align} $$\n23. $$ \\begin{align} \x26amp;P(120\x26lt;X\\le 200)=P(\\frac{-40}{\\sigma}\x26lt;\\frac{X-160}{\\sigma} \\le \\frac{200-160}{\\sigma}=\\Phi(\\frac{40}{\\sigma})-\\Phi(\\frac{-40}{\\sigma})\\ge 0.",
     "inLanguage" : "Chinese",
     "author" : "b1ywww",
     "creator" : "b1ywww",
@@ -61,7 +63,7 @@
     "datePublished": "2020-04-10 00:00:00 \x2b0000 UTC",
     "dateModified" : "2020-04-10 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/b1ywww.github.io\/2020\/s2\/",
-    "wordCount" : "51",
+    "wordCount" : "179",
     "keywords" : [  "b1ywww"]
 }
 </script>
@@ -155,10 +157,18 @@ code.has-jax {
     	 <main class="main">
           <div class="container">
       		
-<h5 id="wc" style="font-size: 1rem;text-align: center;">100 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
 
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
+	
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/qrcode.js"></script>
+
+
         <h1 class="post-title" itemprop="name headline">概率论作业</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://b1ywww.github.io/" rel="author">b1ywww</a> with ♥ 
@@ -189,33 +199,96 @@ code.has-jax {
           
           
 
-          <p>$$
+          <h2 id="16">16.</h2>
+<p>$$
 \begin{align}
-30. &amp;设A，B，C，D事件分别为第一，第二，第三，第四道工序生产出来的是正品\\<br>
-&amp;P=1-P(A)\times P(B) \times P(C) \times P(D) = 0.1240221
+(1)&amp;P(X\le 150 ) = \int_{100}^{150}\frac{100}{x^2}dx=\frac{1}{3}\\<br>
+&amp;p=(P(X &gt;150)^3 = \frac{8}{27}\\<br>
+(2)&amp;p=C_3^1\frac{1}{3}(\frac{2}{3})^2=\frac{4}{9}\\<br>
+(3)&amp;当x\ge 100时F(x)=\int_{-\infty}^xf(s)ds=1-\frac{100}{x}\\<br>
+&amp;所以F(X)=\begin{cases}
+1-\frac{100}{x}, x \ge 100\\<br>
+0,x&lt;100
+\end{cases}
 \end{align}
-$$
-$$
+$$</p>
+<h2 id="17">17.</h2>
+<p>$$
 \begin{align}
-31.&amp;设i次射击一次不中的概率为P(X_i）\\<br>
-&amp;P(X_i) = 1-0.8^i\\<br>
-&amp;当P(X_i)\le 0.1时，即i&gt;10\\<br>
-&amp;所以最少要射击11次\\<br>
+&amp;设F(x) = kx,(0\le x \ge a)\\<br>
+&amp;因为F(a)-F(0)=1\\<br>
+&amp;所以k=\frac{1}{a}\\<br>
+&amp;F(x)=\begin{cases}
+0, x &lt; 0\\<br>
+\frac{x}{a}, 0\ge x \le a\\<br>
+1,x&gt;a
+\end{cases}
 \end{align}
-\\<br>
-$$
-$$
+$$</p>
+<h2 id="18">18.</h2>
+<p>$$
 \begin{align}
-33.P = 1 - \frac{4}{5}\times \frac{2}{3} \times \frac{3}{4} = 0.6\\<br>
+&amp;由均匀分布可得密度函数为f(x)=\begin{cases} \frac{1}{3}, 2\le x \le 5\\ 0, x&lt;2或x&gt;5\end{cases}\\<br>
+&amp;P(X&gt;3)=\int_3^5\frac{1}{3}dx=\frac{2}{3}\\<br>
+&amp;p=C_3^2(\frac{2}{3})^2\frac{1}{3}+(\frac{2}{3})^2 = \frac{20}{27}
 \end{align}
-\\<br>
-$$
-$$
+$$</p>
+<h2 id="23">23.</h2>
+<p>$$
 \begin{align}
-34.&amp;设A_i 表示有几个人射中飞机， B表示飞机被击落\\<br>
-&amp;P(B)=\sum_{i=1}^n p(A_i)p(B|A_i)=0.458\\<br>
+&amp;P(120&lt;X\le 200)=P(\frac{-40}{\sigma}&lt;\frac{X-160}{\sigma} \le \frac{200-160}{\sigma}=\Phi(\frac{40}{\sigma})-\Phi(\frac{-40}{\sigma})\ge 0.8\\<br>
+&amp;所以\sigma\le \frac{40}{1.29}=31.25
 \end{align}
-\\<br>
+$$</p>
+<h2 id="28">28.</h2>
+<p>$$
+\begin{align}
+&amp;P(Y=0)=P(X=0)=\frac{1}{5}\\<br>
+&amp;P(Y=1)=P(X=-1)+P(X=1)=\frac{1}{6}+\frac{1}{15}=\frac{7}{30}\\<br>
+&amp;P(Y=4)=P(X=-2)=\frac{1}{5}\\<br>
+&amp;P(Y=9)=P(X=3)=\frac{11}{30}\\<br>
+&amp;所以Y的分布律为\\<br>
+&amp;\begin{array}{c|lcr}
+\hline
+Y&amp;0&amp;1&amp;4&amp;9\\<br>
+\hline
+P_k&amp;\frac{1}{5}&amp;\frac{7}{30}&amp;\frac{1}{5}&amp;\frac{11}{30}\\<br>
+\hline
+\end{array}
+\end{align}
+$$</p>
+<h2 id="30">30</h2>
+<p>$$
+\begin{align}
+(1)&amp;当y\le 0时,F_Y(y)=P(Y\le y) = 0\\<br>
+&amp;当y&gt;0时,\\<br>
+&amp;F_Y(y)=P(x\le y)=P(e^x\le y)= P(X\le lny)=\int_{-\infty}^{lny}f_X(x)dx\\<br>
+&amp;所以f_Y(y)=\frac{F_Y}(y){dy}=\frac{1}{y}f_X(lny)=\frac{1}{y}\frac{e^{\frac{-(lny)^2}{2}}}{\sqrt{2\pi}}\\<br>
+(2)&amp;Y=2X^2+1\ge 1\\<br>
+&amp;当y\le 1时F_Y(y)=P(Y\le y )=0\\<br>
+&amp;当y&gt;1 时F_Y(y)=P(Y\le y)=P(X^2\le \frac{y-1}{2})=P(-\sqrt{\frac{y-1}{2}}\le X\le \sqrt{\frac{y-1}{2}})=\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x)dx\\<br>
+&amp;f_Y(y)=\frac{dF_Y(y)}{dy}=\frac{1}{4}\sqrt{\frac{2}{y-1}}(f_X(-\sqrt{\frac{y-1}{2}}+ f_X\sqrt{\frac{y-1}{2}}=\frac{1}{2}\sqrt{\frac{2}{y-1}}\frac{e^{-\frac{y-1}{4}}}{\sqrt{2\pi}}\\<br>
+(3)&amp;Y=|X|\ge 0\\<br>
+&amp;当y\le0时 F_Y(y)=P(Y\le y)=0\\<br>
+&amp;当y &gt;0时 F_Y(y)=P(|X|\le y)=P(-y\le X \le y)=\int_{-y}^{y}f_X(x)dx\\<br>
+&amp;f_Y(y)=\frac{dF_Y(y)}{dy}=f_X(y)+f_X(-y)=\frac{2e^{-\frac{y^2}{2}}}{\sqrt{2\pi}}
+\end{align}
+$$</p>
+<h2 id="31">31</h2>
+<p>$$
+\begin{align}
+(1)&amp;因为0&lt;x&lt;1 所以1&lt;Y&lt;e\\<br>
+&amp;y\le 1时F_Y(y)=0\\<br>
+&amp;1&lt;y&lt;e时F_Y(y)=P(X\le lny)=\int_0^{lny}dx=lny\\<br>
+&amp;当y\ge e时 F_Y(y) =1\\<br>
+&amp;所以分布函数为F_Y(y)=\begin{cases}0&amp;  y\le 1\\lny&amp;1&lt;y&lt;e\\1&amp; y\ge e\end{cases}\\<br>
+&amp;密度函数为f_Y(y)=\begin{cases}0&amp; y\le 1或y\ge e\\ \frac{1}{y}&amp; 1&lt;y&lt;e\end{cases}\\<br>
+(2)&amp;因为0&lt;x&lt;1 所以Z&gt;0\\<br>
+&amp;当z\le 0时F_Z(z)=0\\<br>
+&amp;当z&gt;0时，F_Z(z)=P(x\ge e^{-\frac{z}{2}})=\int_{e^{-\frac{z}{2}}}^{1}dx=1-e^{-\frac{z}{2}}\\<br>
+&amp;分布函数为F_Z(z)=\begin{cases} 0&amp; z\le 0\\ 1-e^{-\frac{z}{2}}&amp;z&gt;0\end{cases}\\<br>
+&amp;密度函数为f_Z(z)=\begin{cases}\frac{1}{2}e^{-\frac{z}{2}}&amp;z&gt;0\\0&amp; z\le 0\end{cases}
+\end{align}
 $$</p>
 
     </div>
@@ -279,6 +352,10 @@ new Valine({
     visitor:  true 
 });
 </script>
+	
+	<center>      <div class="social-share" data-mode="prepend">
+        <a href="javascript:" class="social-share-icon icon-heart"></a>
+      </div></center>
 </div>
 
 </article>
@@ -294,6 +371,7 @@ new Valine({
 <span id="busuanzi_container_site_uv">
     您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
 </span>
+
 <br/>
         &copy;
         
@@ -314,6 +392,8 @@ new Valine({
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </footer>
+
+
 
 
 
