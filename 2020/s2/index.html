@@ -63,7 +63,7 @@
     "datePublished": "2020-04-10 00:00:00 \x2b0000 UTC",
     "dateModified" : "2020-04-10 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/b1ywww.github.io\/2020\/s2\/",
-    "wordCount" : "179",
+    "wordCount" : "237",
     "keywords" : [  "b1ywww"]
 }
 </script>
@@ -157,7 +157,7 @@ code.has-jax {
     	 <main class="main">
           <div class="container">
       		
-<h5 id="wc" style="font-size: 1rem;text-align: center;">200 Words|Read in about 1 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+<h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
 
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -288,6 +288,46 @@ $$</p>
 &amp;当z&gt;0时，F_Z(z)=P(x\ge e^{-\frac{z}{2}})=\int_{e^{-\frac{z}{2}}}^{1}dx=1-e^{-\frac{z}{2}}\\<br>
 &amp;分布函数为F_Z(z)=\begin{cases} 0&amp; z\le 0\\ 1-e^{-\frac{z}{2}}&amp;z&gt;0\end{cases}\\<br>
 &amp;密度函数为f_Z(z)=\begin{cases}\frac{1}{2}e^{-\frac{z}{2}}&amp;z&gt;0\\0&amp; z\le 0\end{cases}
+\end{align}
+$$</p>
+<h2 id="2">2</h2>
+<p>$$
+\begin{align}
+&amp;P(X=1,Y=1) = \frac{C_3^1C_2^1C_2^2}{C_7^4}=\frac{6}{35},P(X=2,Y=0)=\frac{C_3^2C_2^2}{C_7^4}=\frac{3}{35}\\<br>
+&amp;P(X=3,Y=0) = \frac{C_3^3C_2^1}{C_7^4}=\frac{3}{35},P(X=2,Y=1) = \frac{C_3^2C_2^1C_2^1}{C_7^4}=\frac{12}{35}\\<br>
+&amp;P(X=3,Y=1) = \frac{C_3^3C_2^1}{C_7^4}=\frac{2}{35},P(X=0,Y=2)=\frac{C_2^2C_2^2}{C_7^4}=\frac{1}{35}\\<br>
+&amp;P(X=1,Y=2) = \frac{C_3^1C_2^2C_2^1}{C_7^4}=\frac{6}{35},P(X=2,Y=2)=\frac{C_3^2C_2^2}{C_7^4}=\frac{3}{35}\\<br>
+\end{align}
+$$
+$$
+\begin{array}{c|lcr}
+\hline
+Y\X&amp;0&amp;1&amp;2&amp;3\\<br>
+\hline
+0&amp;0&amp;0&amp;\frac{3}{35}&amp;\frac{2}{35}\\<br>
+\hline
+1&amp;0&amp;\frac{6}{35}&amp;\frac{12}{35}&amp;\frac{2}{35}\\<br>
+\hline
+2&amp;\frac{1}{35}&amp;\frac{6}{35}&amp;\frac{3}{35}&amp;0\\<br>
+\hline
+\end{array}
+$$</p>
+<h2 id="3">3</h2>
+<p>$$
+\begin{align}
+&amp;P(0&lt;X\le \frac{\pi}{4},\frac{\pi}{6}&lt;Y \le \frac{\pi}{3})=F(\frac{\pi}{4},\frac{\pi}{3})-F(\frac{\pi}{4},\frac{\pi}{6})-F(0,\frac{\pi}{3})+F(0,\frac{\pi}{6})\\<br>
+&amp;=sin\frac{\pi}{4}sin\frac{\pi}{3}-sin\frac{\pi}{4}sin\frac{\pi}{6}-sin0sin\frac{\pi}{3}+sin0sin\frac{\pi}{6}\\<br>
+&amp;=\frac{\sqrt{2}}{4}(\sqrt{3}-1)
+\end{align}
+$$</p>
+<h2 id="5">5</h2>
+<p>$$
+\begin{align}
+(1)&amp;\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dydx=1\\<br>
+&amp;所以k=\frac{1}{8}\\<br>
+(2)&amp;P(X&lt;1,Y&lt;3)=\int_{-\infty}^1\int_{-\infty}^3f(x,y)dydx=\frac{3}{8}\\<br>
+(3)&amp;P(X&lt;1.5)即2&lt;y&lt;4所以P(X&lt;1.5)=\int_0^{1.5}\int_2^4f(x,y)dydx = \frac{27}{32}\\<br>
+(4)&amp;P(X+Y\le 4)即Y\le 4-X所以P(X+Y\le 4)=\int_0^2\int_2^{4-X}f(x,y)dydx=\frac{2}{3}
 \end{align}
 $$</p>
 

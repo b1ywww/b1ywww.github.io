@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="Chinese">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="b1ywww">
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://b1ywww.github.io/2020/2/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="stylesheet" href="/katex/katex.min.css"/>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <title>
+       
+       
+           语法分析 一 | b1ywww
+       
+  </title>
+  <meta name="title" content="语法分析 一 | b1ywww">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/b1ywww.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "语法分析 一",
+    "headline" : "语法分析 一",
+    "description" : "基本概念 1.语言 $\\quad \\quad$我们通常用$\\sum$表示字母表，字母表中的每个元素称为字符或符号。不同的语言的字母表可能是不同的，程序语言的 字母表通常是ASCII字符集。由字母表$\\sum$中的字符所组成的有穷系列称为$\\sum$上的所有字符串(包括空串)组成的集合 用$\\sum^*$ 表示。那么，对于字母表$\\sum$来说，$\\sum^*$上的任意一个子集都称为$\\sum$上的一个语言，记为L(L$\\subset \\sum$), 该语言的每一个字符串称为语言L的一个语句或句子\n$\\quad \\quad$例如,设$\\sum$={a,b,c},则L={$\\epsilon$, a , aa , ab , aaa , aab , aba , abb ,$\\cdots$}为$\\sum$上的一个语言。如果a表示字母， b表示数字，c看做其他符号，则L即是程序语言中的标识符集，其中的每个标识符就是标识符集中的一个句子\n2.文法 $\\quad \\quad$文法通常表示成四元组G[s]=($V_T,V_N,S ,\\xi$)，其中\n$\\quad \\quad$$\\quad \\quad$(1)$V_T$为终结符号集，这是一个非空有限集，他的每个元素称为终结符号；\n$\\quad \\quad$$\\quad \\quad$(2)$V_N$为非终结符集，他也是一个非空有限集，其每个元素称为非终结符号，且有$V_T\\bigcap V_N=\\emptyset$;\n$\\quad \\quad$$\\quad \\quad$(3)S为一文法开始符，是一个特殊的非终结符号，即$S\\in V_N$; $\\quad \\quad$$\\quad \\quad$(4)$\\xi$是产生式的非空有限集，其中每个产生式(或称规则)是以序偶$(\\alpha,\\beta)$通常写作$\\alpha \\to \\beta$或$\\alpha ::= \\beta$ 读作“ $\\alpha 是 \\beta$ ”\n$\\quad \\quad$$\\quad \\quad$或“ $\\alpha 定义 \\beta$ ”\\\n终结符和非终结符的区别 终结符：\n$\\quad \\quad$终结符是指语言必不可再分的基本符号，通常是一个语言的字母表；终结符代表了语法的最小元素，是一种个体记号。\n非终结符：\n$\\quad \\quad$非终结符号也称语法变量，他代表语法实体或语法范畴；非终结符代表一个一定的语法概念，因此，一个非终结符是一个类 、一个集合。\n$\\quad \\quad$在程序语言中，可以把变量、常数、“ \x2b ”，“ * ”，等看作是终结符，而像“ 算术表达式 ”这个非终结符则代表着一定算术式组成的类， 如i*(i\x2bi)、i\x2bi\x2bi等；也即每个非终结符代表着由一些终结符和非终结符且满足一定规则的符号串组成的集合。",
+    "inLanguage" : "Chinese",
+    "author" : "b1ywww",
+    "creator" : "b1ywww",
+    "publisher": "b1ywww",
+    "accountablePerson" : "b1ywww",
+    "copyrightHolder" : "b1ywww",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-13 11:51:50 \x2b0800 CST",
+    "dateModified" : "2020-04-13 11:51:50 \x2b0800 CST",
+    "url" : "https:\/\/b1ywww.github.io\/2020\/2\/",
+    "wordCount" : "270",
+    "keywords" : [  "b1ywww"]
+}
+</script>
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://b1ywww.github.io/">b1ywww</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://b1ywww.github.io/">b1ywww</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<h5 id="wc" style="font-size: 1rem;text-align: center;">300 Words|Read in about 2 Min|本文总阅读量<span id="busuanzi_value_page_pv"></span>次</h5>
+
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+	
+	
+	
+	<link rel="stylesheet" href="/css/share.min.css">
+    <script src="/js/social-share.min.js"></script>
+    <script src="/js/qrcode.js"></script>
+
+
+        <h1 class="post-title" itemprop="name headline">语法分析 一</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://b1ywww.github.io/" rel="author">b1ywww</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-04-13 itemprop="datePublished">April 13, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="基本概念">基本概念</h2>
+<h3 id="1语言">1.语言</h3>
+<p>$\quad \quad$我们通常用$\sum$表示字母表，字母表中的每个元素称为<code>字符</code>或<code>符号</code>。不同的语言的字母表可能是不同的，程序语言的
+字母表通常是<code>ASCII</code>字符集。由字母表$\sum$中的字符所组成的有穷系列称为$\sum$上的所有字符串(包括空串)组成的集合
+用$\sum^*$ 表示。那么，对于字母表$\sum$来说，$\sum^*$上的任意一个子集都称为$\sum$上的一个语言，记为L(L$\subset \sum$),
+该语言的每一个字符串称为语言L的一个<code>语句</code>或<code>句子</code><br>
+$\quad \quad$例如,设$\sum$={a,b,c},则L={$\epsilon$, a , aa , ab , aaa , aab , aba , abb ,$\cdots$}为$\sum$上的一个<code>语言</code>。如果a表示字母，
+b表示数字，c看做其他符号，则L即是程序语言中的标识符集，其中的每个标识符就是标识符集中的一个句子</p>
+<h3 id="2文法">2.文法</h3>
+<p>$\quad \quad$文法通常表示成四元组G[s]=($V_T,V_N,S ,\xi$)，其中<br>
+$\quad \quad$$\quad \quad$(1)$V_T$为终结符号集，这是一个非空有限集，他的每个元素称为终结符号；<br>
+$\quad \quad$$\quad \quad$(2)$V_N$为非终结符集，他也是一个非空有限集，其每个元素称为非终结符号，且有$V_T\bigcap V_N=\emptyset$;<br>
+$\quad \quad$$\quad \quad$(3)S为一文法开始符，是一个特殊的非终结符号，即$S\in V_N$;
+<br>
+$\quad \quad$$\quad \quad$(4)$\xi$是<code>产生式</code>的非空有限集，其中每个产生式(或称<code>规则</code>)是以序偶$(\alpha,\beta)$通常写作$\alpha \to \beta$或$\alpha ::= \beta$
+读作“ $\alpha 是 \beta$ ”<br>
+$\quad \quad$$\quad \quad$或“ $\alpha 定义 \beta$ ”\</p>
+<h4 id="终结符和非终结符的区别">终结符和非终结符的区别</h4>
+<p><code>终结符：</code></p>
+<p>$\quad \quad$终结符是指语言必不可再分的基本符号，通常是一个语言的字母表；终结符代表了语法的最小元素，是一种个体记号。</p>
+<p><code>非终结符：</code></p>
+<p>$\quad \quad$非终结符号也称语法变量，他代表语法实体或语法范畴；非终结符代表一个一定的语法概念，因此，一个非终结符是一个类
+、一个集合。</p>
+<p>$\quad \quad$在程序语言中，可以把变量、常数、“ + ”，“ * ”，等看作是终结符，而像“ 算术表达式 ”这个非终结符则代表着一定算术式组成的类，
+如i*(i+i)、i+i+i等；也即每个<code>非终结符</code>代表着由一些<code>终结符和非终结符</code>且满足一定规则的符号串组成的集合。</p>
+<p><code>产生式：</code></p>
+<p>产生式(也称产生规则或规则)是定义语法的一种书写规则。一个语法实体的相关规则可能不止一个。例如，
+$$
+P \to a_1\\<br>
+p \to a_2\\<br>
+\cdot\\<br>
+\cdot\\<br>
+\cdot\\<br>
+p \to a_n
+$$
+为了书写方便，可将这些有相同左部的产生式合并为一个，即缩写成
+$$
+P \to a_1|a_2|\cdots|a_n
+$$</p>
+<h3 id="例题1试构造产生标识符的文法">例题1:试构造产生标识符的文法</h3>
+<p>$\quad \quad$ 解: 首先，标识符是以字母开头的字母数字串，我们用L表示“ 字母 ”类的非终结符，用D表示“ 数字 ”类的非终结符
+,而用T表示“ 字母或数字 ”类非终结符，则有:
+$$
+\begin{align}
+L &amp;\to a|b|\cdots|z\\<br>
+D &amp;\to 0|1|\cdots|9\\<br>
+T &amp;\to L|D (即“字母或数字类”非终结符可以分为”数字类“非终结符和“字母类&quot;非终结符)
+\end{align}
+$$
+其次，如果用S表示&quot;字母数字串&quot;类，则T是一字母或数字，ST也是字母数字串，所以有
+$$S \to T|ST$$
+其中，产生式$S \to T|ST$是一种左递归形式，由它可以产生一串T。最后，作为&rdquo; 标识符 &ldquo;的非终结符I，它或者
+是一单个字母，或者为一字母后跟字母数字串，即
+$$L \to L|LS$$
+因此，产生标识符的文法G[I]为:
+$$
+G[I]=(\{a,b,\cdots,z,0,\cdots,9\},\{ I,S,T,L,D\},I,\xi)
+$$</p>
+<h3 id="3文法产生的语言">3.文法产生的语言</h3>
+<p>$\quad \quad$设文法G[s]=($V_T,V_N,S ,\xi$)，且$\alpha、\beta \in (V_T \cup V_N)^*$,如果存在产生式$A \to \delta(\delta \in ((V_T \cup V_N)^*)$
+则称$\alpha A \beta 可直接推出 \alpha \delta \beta$，即
+$$
+\alpha A \beta \Rightarrow \alpha \delta \beta
+$$
+其中“ $ \Rightarrow $ ”表示直接推导出，是应用产生规则进行推导的记号。直接推导是指对文法符号串$\alpha \delta \beta$
+中的非终结符A用相应的产生式$A \to \delta$的右部$ \delta$来替换，从而得到$ \alpha \delta \beta $。我们给出的推导说明如下<br>
+(1)如果$a_1$可直接推出$a_2,a_2$可直接推出$a_3,\cdots ,a_{n-1}可直接推出a_n%$，即存在一个自$a_1到a_n$的推导序列:
+$$ a_1 \Rightarrow a_2 \Rightarrow a_3 \Rightarrow \cdots \Rightarrow a_n(n&gt;0)$$
+则我们称$a_1可推导出a_n，记为a_1 \stackrel{+} \Rightarrow a_n $,它表示从$a_1$出发经过一步或若干步可推导出$a_n$
+(2)如果记$a_1 \stackrel{0}\Rightarrow a_1$，则$ a_1 \stackrel{*}\Rightarrow a_n $表示从$a_1$出发经过0步或者若干步可推导
+出$a_n$；</p>
+<p>例如:对下面的文法G[E]：
+$$
+E \to E + E |E* E|(E)|i
+$$
+其中，唯一的非终结符E可以看成是代表一类算数表达式。我们可以从E出发进行一系列的推导，如表达式 i+i* i的推导如下:
+$$
+E \Rightarrow E +E \Rightarrow E + E * E \Rightarrow E + E* i \Rightarrow E+i* i \Rightarrow i + i* i \tag{1} \label{1}
+$$</p>
+<h4 id="注意-在每一步推导过程中只能对其中的一个非终结符用其对应的产生式右部的一个侯选式来替换">注意: 在每一步推导过程中，只能对其中的一个非终结符用其对应的产生式右部的一个侯选式来替换。</h4>
+<p><code>推导过程：</code></p>
+<p>推导过程也可以理解为从非终结符具体化的过程。如式$\eqref{1}$ 若E表示为{+,-,×,÷}的集合，i则可以表示为{+}其中之一
+则E+E* E 即是{+,-,×,÷} + {+,-,×,÷} * {+,-,×,÷} 最终具体化为 {+} + {+}* {+}</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>b1ywww </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://b1ywww.github.io/2020/2/>https://b1ywww.github.io/2020/2/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://b1ywww.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+	<div class="post-comment">
+    
+    
+<span id="/2020/2/" class="leancloud_visitors" data-flag-title="语法分析 一">
+<p></p>
+</span>
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+new Valine({
+    el: '#vcomments' ,
+    appId: 'qz8whz7uAc77wiWQtyipmTOu-gzGzoHsz',
+    appKey: 'eMuUVpD4kiwDILEPBmO9Euit',
+    notify:  false , 
+    verify:  false , 
+    avatar:'mm', 
+    placeholder: '说点什么吧...',
+    visitor:  true 
+});
+</script>
+	
+	<center>      <div class="social-share" data-mode="prepend">
+        <a href="javascript:" class="social-share-icon icon-heart"></a>
+      </div></center>
+</div>
+
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+
+    <div class="copyright">
+	<span id="busuanzi_container_site_pv">
+    本站访问量：<span id="busuanzi_value_site_pv"></span>次
+</span>
+&nbsp;
+<span id="busuanzi_container_site_uv">
+    您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+</span>
+
+<br/>
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://b1ywww.github.io/">b1ywww</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+	<script type="text/x-mathjax-config">
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

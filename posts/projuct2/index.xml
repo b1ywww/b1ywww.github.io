@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编译原理 on b1ywww</title>
+    <link>https://b1ywww.github.io/posts/projuct2/</link>
+    <description>Recent content in 编译原理 on b1ywww</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>Chinese</language>
+    <lastBuildDate>Thu, 14 May 2020 17:24:36 +0800</lastBuildDate>
+    
+	<atom:link href="https://b1ywww.github.io/posts/projuct2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>语法分析 一</title>
+      <link>https://b1ywww.github.io/2020/2/</link>
+      <pubDate>Mon, 13 Apr 2020 11:51:50 +0800</pubDate>
+      
+      <guid>https://b1ywww.github.io/2020/2/</guid>
+      <description>基本概念 1.语言 $\quad \quad$我们通常用$\sum$表示字母表，字母表中的每个元素称为字符或符号。不同的语言的字母表可能是不同的，程序语言的 字母表通常是ASCII字符集。由字母表$\sum$中的字符所组成的有穷系列称为$\sum$上的所有字符串(包括空串)组成的集合 用$\sum^*$ 表示。那么，对于字母表$\sum$来说，$\sum^*$上的任意一个子集都称为$\sum$上的一个语言，记为L(L$\subset \sum$), 该语言的每一个字符串称为语言L的一个语句或句子
+$\quad \quad$例如,设$\sum$={a,b,c},则L={$\epsilon$, a , aa , ab , aaa , aab , aba , abb ,$\cdots$}为$\sum$上的一个语言。如果a表示字母， b表示数字，c看做其他符号，则L即是程序语言中的标识符集，其中的每个标识符就是标识符集中的一个句子
+2.文法 $\quad \quad$文法通常表示成四元组G[s]=($V_T,V_N,S ,\xi$)，其中
+$\quad \quad$$\quad \quad$(1)$V_T$为终结符号集，这是一个非空有限集，他的每个元素称为终结符号；
+$\quad \quad$$\quad \quad$(2)$V_N$为非终结符集，他也是一个非空有限集，其每个元素称为非终结符号，且有$V_T\bigcap V_N=\emptyset$;
+$\quad \quad$$\quad \quad$(3)S为一文法开始符，是一个特殊的非终结符号，即$S\in V_N$; $\quad \quad$$\quad \quad$(4)$\xi$是产生式的非空有限集，其中每个产生式(或称规则)是以序偶$(\alpha,\beta)$通常写作$\alpha \to \beta$或$\alpha ::= \beta$ 读作“ $\alpha 是 \beta$ ”
+$\quad \quad$$\quad \quad$或“ $\alpha 定义 \beta$ ”\
+终结符和非终结符的区别 终结符：
+$\quad \quad$终结符是指语言必不可再分的基本符号，通常是一个语言的字母表；终结符代表了语法的最小元素，是一种个体记号。
+非终结符：
+$\quad \quad$非终结符号也称语法变量，他代表语法实体或语法范畴；非终结符代表一个一定的语法概念，因此，一个非终结符是一个类 、一个集合。
+$\quad \quad$在程序语言中，可以把变量、常数、“ + ”，“ * ”，等看作是终结符，而像“ 算术表达式 ”这个非终结符则代表着一定算术式组成的类， 如i*(i+i)、i+i+i等；也即每个非终结符代表着由一些终结符和非终结符且满足一定规则的符号串组成的集合。</description>
+    </item>
+    
+  </channel>
+</rss>
